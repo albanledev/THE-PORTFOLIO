@@ -401,7 +401,86 @@ h1 {
 .lottie-row {
   position: absolute;
   bottom: 0px !important;
-  left: 18%;
+  left: 10%;
   width: 1vw;
   z-index: -10;
+}
+
+@media screen and (max-width: 1000px) {
+  .lottie-quotes {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -100px;
+    left: -50px;
+    z-index: -10;
+  }
+  .slider-container {
+    position: relative;
+    height: 150px;
+    width: 60vw;
+    right: 0vw;
+  }
+  .about {
+    width: 100%;
+    height: 120vh;
+    position: relative;
+    margin-top: 50px;
+  }
+  .about img {
+    height: 45%;
+    -o-object-fit: cover;
+       object-fit: cover; /* Ajuste la taille de l'image sans la déformer */
+    -o-object-position: bottom left;
+       object-position: bottom left; /* Positionne l'image en bas à gauche */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .lottie-row {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0px !important;
+    left: 0%;
+    z-index: -10;
+  }
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 70%;
+    margin-right: 10vw;
+    width: 100%;
+  }
+  .about-text h1 {
+    font-size: 4em;
+    margin-bottom: 0;
+    margin-top: 0;
+    width: 75% !important;
+    text-align: center;
+    line-height: 1em;
+  }
+  .about-text div > div > p {
+    color: #7D7D7D;
+    font-size: 1em;
+    line-height: 1.6em;
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 780px) {
+  .lottie-quotes {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -120px;
+    left: -50px;
+    z-index: -10;
+  }
+}
+@media screen and (max-width: 684px) {
+  .about img {
+    height: 40%;
+  }
 }/*# sourceMappingURL=style.css.map */

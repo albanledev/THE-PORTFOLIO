@@ -28,6 +28,7 @@ body{
     line-height: 1.5;
 
     font-family: 'Poppins', sans-serif;
+    cursor: none;
 
 }
 
@@ -108,7 +109,7 @@ h1{
     button {
         font-family: 'Poppins', sans-serif;
         margin-top: 50px;
-        cursor: pointer;
+        // cursor: hidden;
         text-decoration: none;
         position: relative;
         border: none;
@@ -653,4 +654,81 @@ body.loading {
     white-space: nowrap; /* Empêche le texte de passer à la ligne */
     // overflow: hidden; /* Masque le texte qui dépasse */
     // border-right: .15em solid; /* Ajoute une animation de curseur */
+}
+
+
+//scrollbar
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+//cursor
+
+.cursor {
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 200ms ;
+  transition-timing-function: ease-out;
+  z-index: 9999;
+  animation: cursorAnim 0.5s infinite alternate;
+
+
+
+}
+
+.cursor::after{
+  content: "";
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border: 8px solid gray;
+  border-radius: 50%;
+  opacity: 0.5;
+  top: -8px;
+  left: -8px;
+  animation: cursorAnim2 0.5s infinite alternate;
+
+}
+
+@keyframes cursorAnim {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.7);
+  }
+}
+
+@keyframes cursorAnim2 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.4);
+  }
+}
+
+@keyframes cursorAnim3 {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+.expand{
+  animation: cursorAnim3 0.5s forwards;
+  border: 1px solid red;
 }

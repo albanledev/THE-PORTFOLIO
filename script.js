@@ -169,3 +169,19 @@ window.addEventListener('keydown', function(event) {
     scrollToNextSection();
   }
 });
+
+
+
+// clic sur bouton
+
+// Récupérez tous les boutons de la page
+var buttons = document.getElementsByTagName("button");
+
+// Parcourez chaque bouton et ajoutez un écouteur d'événement pour le clic
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function() {
+    // Effectuez une action lorsque le bouton est cliqué
+    console.log("Button clicked!");
+    // Vous pouvez également ajouter d'autres actions que vous souhaitez exécuter ici
+  });
+}

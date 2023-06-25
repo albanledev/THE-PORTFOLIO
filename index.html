@@ -22,7 +22,7 @@
   </div>
  <!-- Nouvelle div pour le fond noir -->
 
-  
+  <div class="cursor"></div>
     
 <div class="hero bloc">
     <div class="hero-section">
@@ -111,7 +111,21 @@
 
       <!-- <img src="assets/img/explore.gif" alt="GIF animé" class="gif"> -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-      <script></script>
+      <script>
+
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', e => {
+          cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+        })
+
+        document.addEventListener('click', () => {
+          cursor.classList.add("expand");
+
+          setTimeout(() => {
+            cursor.classList.remove("expand");
+          }, 500)
+        })
+      </script>
       <script src="script.js"></script>
 </body>
 </html>

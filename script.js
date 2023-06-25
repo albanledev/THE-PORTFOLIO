@@ -100,7 +100,7 @@ function scrollToNextSection() {
 // Parcourez chaque section et ajoutez des gestionnaires d'événements pour les événements wheel (molette de souris) et keydown (touches du clavier)
 blocSections.forEach(function(section, index) {
   section.addEventListener('wheel', function(event) {
-    if (window.innerWidth > 1000) {
+    
     event.preventDefault(); // Empêche le comportement par défaut du défilement de la molette de souris
 
     // Vérifiez la direction du défilement de la molette de souris
@@ -111,7 +111,7 @@ blocSections.forEach(function(section, index) {
 
     // Faites défiler la fenêtre jusqu'à la section active avec une animation fluide
     blocSections[activeSectionIndex].scrollIntoView({ behavior: 'smooth' });
-    }
+    
   });
 
   section.addEventListener('keydown', function(event) {

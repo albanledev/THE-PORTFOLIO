@@ -51,7 +51,9 @@ body{
 
  
 
-  
+a{
+  cursor: none;
+}  
 
 h1{
     font-family: 'Birthstone', cursive;
@@ -107,9 +109,9 @@ h1{
     //     justify-content: start;
     // }
     button {
+      cursor: none;
         font-family: 'Poppins', sans-serif;
         margin-top: 50px;
-        // cursor: hidden;
         text-decoration: none;
         position: relative;
         border: none;
@@ -676,6 +678,7 @@ body.loading {
   transition-timing-function: ease-out;
   z-index: 9999;
   animation: cursorAnim 0.5s infinite alternate;
+  pointer-events: none;
 
 
 

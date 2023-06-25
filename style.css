@@ -39,6 +39,10 @@ body {
     font-size: 1rem; /* Revenir à la taille de police de base pour les ordinateurs de bureau */
   }
 }
+a {
+  cursor: none;
+}
+
 h1 {
   font-family: "Birthstone", cursive;
   font-size: 7em;
@@ -77,6 +81,7 @@ h1 {
   width: 600px;
 }
 .hero-section button {
+  cursor: none;
   font-family: "Poppins", sans-serif;
   margin-top: 50px;
   text-decoration: none;
@@ -520,6 +525,7 @@ h1 {
   transition-timing-function: ease-out;
   z-index: 9999;
   animation: cursorAnim 0.5s infinite alternate;
+  pointer-events: none;
 }
 
 .cursor::after {

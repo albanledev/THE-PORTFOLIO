@@ -21,35 +21,36 @@ window.addEventListener('load', function() {
 //animation Welcome 
 
 var textElement = document.getElementById('typed-text');
-    var strings = ["Bienvenue", "Bienvenidos", "Welcome"];
-    var index = 0;
-    var charIndex = 0;
-    var delay = 100; // Délai entre chaque frappe (en ms)
+var strings = ["Bienvenue", "Bienvenidos", "Welcome", "Yôkoso", "Benvenuto", "Willkommen"];
+var index = 0;
+var charIndex = 0;
+var delay = 100; // Délai entre chaque frappe (en ms)
+var initialDelay = 3000; // Délai initial avant de commencer l'animation (en ms)
 
-    function typeNextChar() {
-      var currentString = strings[index];
+function typeNextChar() {
+  var currentString = strings[index];
 
-      if (charIndex < currentString.length) {
-        textElement.innerHTML += currentString.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeNextChar, delay);
-      } else {
-        setTimeout(deleteText, delay * 10); // Délai avant de supprimer le texte
-      }
-    }
+  if (charIndex < currentString.length) {
+    textElement.innerHTML += currentString.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeNextChar, delay);
+  } else {
+    setTimeout(deleteText, delay * 10); // Délai avant de supprimer le texte
+  }
+}
 
-    function deleteText() {
-      if (charIndex > 0) {
-        textElement.innerHTML = textElement.innerHTML.slice(0, -1);
-        charIndex--;
-        setTimeout(deleteText, delay);
-      } else {
-        index = (index + 1) % strings.length;
-        setTimeout(typeNextChar, delay); // Délai avant de commencer la frappe du prochain texte
-      }
-    }
+function deleteText() {
+  if (charIndex > 0) {
+    textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+    charIndex--;
+    setTimeout(deleteText, delay);
+  } else {
+    index = (index + 1) % strings.length;
+    setTimeout(typeNextChar, delay); // Délai avant de commencer la frappe du prochain texte
+  }
+}
 
-    typeNextChar(); // Commence l'animation
+setTimeout(typeNextChar, initialDelay); // Commence l'animation après le
 
 
 

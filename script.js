@@ -85,9 +85,22 @@ var blocSections = document.querySelectorAll('.bloc');
 var activeSectionIndex = 0;
 var scrollDirection = 0;
 
-// Parcourez chaque section et ajoutez un gestionnaire d'événement pour l'événement wheel (molette de souris)
+// Fonction pour gérer le défilement vers le haut
+function scrollToPrevSection() {
+  activeSectionIndex = Math.max(0, activeSectionIndex - 1);
+  blocSections[activeSectionIndex].scrollIntoView({ behavior: 'smooth' });
+}
+
+// Fonction pour gérer le défilement vers le bas
+function scrollToNextSection() {
+  activeSectionIndex = Math.min(activeSectionIndex + 1, blocSections.length - 1);
+  blocSections[activeSectionIndex].scrollIntoView({ behavior: 'smooth' });
+}
+
+// Parcourez chaque section et ajoutez des gestionnaires d'événements pour les événements wheel (molette de souris) et keydown (touches du clavier)
 blocSections.forEach(function(section, index) {
   section.addEventListener('wheel', function(event) {
+    if (window.innerWidth > 1000) {
     event.preventDefault(); // Empêche le comportement par défaut du défilement de la molette de souris
 
     // Vérifiez la direction du défilement de la molette de souris
@@ -98,5 +111,61 @@ blocSections.forEach(function(section, index) {
 
     // Faites défiler la fenêtre jusqu'à la section active avec une animation fluide
     blocSections[activeSectionIndex].scrollIntoView({ behavior: 'smooth' });
+    }
   });
+
+  section.addEventListener('keydown', function(event) {
+    // Vérifiez si la touche enfoncée est la touche "Haut" (ArrowUp)
+    if (event.key === 'ArrowUp') {
+      event.preventDefault(); // Empêche le comportement par défaut du défilement de la touche "Haut"
+      scrollToPrevSection();
+    }
+    
+    // Vérifiez si la touche enfoncée est la touche "Bas" (ArrowDown)
+    if (event.key === 'ArrowDown') {
+      event.preventDefault(); // Empêche le comportement par défaut du défilement de la touche "Bas"
+      scrollToNextSection();
+    }
+  });
+});
+
+// Gestionnaire d'événement pour le défilement sur le trackpad (pour les navigateurs qui le prennent en charge)
+window.addEventListener('wheel', function(event) {
+  // Vérifiez si la molette de la souris n'a pas été utilisée simultanément
+  if (scrollDirection === 0) {
+    if (window.innerWidth > 1000) {
+    event.preventDefault(); // Empêche le comportement par défaut du défilement du trackpad
+
+    // Vérifiez la direction du défilement du trackpad
+    scrollDirection = event.deltaY > 0 ? 1 : -1;
+
+    // Mettez à jour l'index de la section active en fonction de la direction du défilement
+    activeSectionIndex = Math.max(0, Math.min(activeSectionIndex + scrollDirection, blocSections.length - 1));
+
+    // Faites défiler la fenêtre jusqu'à la section active avec une animation fluide
+    blocSections[activeSectionIndex].scrollIntoView({ behavior: 'smooth' });
+
+    // Réinitialisez la direction du défilement après une courte période
+    setTimeout(function() {
+      scrollDirection = 0;
+    }, 0);
+  }
+  }
+
+
+});
+
+// Gestionnaire d'événement pour le défilement avec les touches "Haut" (ArrowUp) et "Bas" (ArrowDown) du clavier
+window.addEventListener('keydown', function(event) {
+  // Vérifiez si la touche enfoncée est la touche "Haut" (ArrowUp)
+  if (event.key === 'ArrowUp') {
+    event.preventDefault(); // Empêche le comportement par défaut du défilement de la touche "Haut"
+    scrollToPrevSection();
+  }
+  
+  // Vérifiez si la touche enfoncée est la touche "Bas" (ArrowDown)
+  if (event.key === 'ArrowDown') {
+    event.preventDefault(); // Empêche le comportement par défaut du défilement de la touche "Bas"
+    scrollToNextSection();
+  }
 });

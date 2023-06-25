@@ -500,6 +500,7 @@ h1 {
 #typed-text {
   display: inline-block;
   min-height: 2em;
+  width: -moz-max-content;
+  width: max-content;
   white-space: nowrap; /* Empêche le texte de passer à la ligne */
-  overflow: hidden; /* Masque le texte qui dépasse */
 }/*# sourceMappingURL=style.css.map */

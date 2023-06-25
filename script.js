@@ -18,6 +18,39 @@ window.addEventListener('load', function() {
 });
 
 
+//animation Welcome 
+
+var textElement = document.getElementById('typed-text');
+    var strings = ["Bienvenue", "Bienvenidos", "Welcome"];
+    var index = 0;
+    var charIndex = 0;
+    var delay = 100; // Délai entre chaque frappe (en ms)
+
+    function typeNextChar() {
+      var currentString = strings[index];
+
+      if (charIndex < currentString.length) {
+        textElement.innerHTML += currentString.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeNextChar, delay);
+      } else {
+        setTimeout(deleteText, delay * 10); // Délai avant de supprimer le texte
+      }
+    }
+
+    function deleteText() {
+      if (charIndex > 0) {
+        textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+        charIndex--;
+        setTimeout(deleteText, delay);
+      } else {
+        index = (index + 1) % strings.length;
+        setTimeout(typeNextChar, delay); // Délai avant de commencer la frappe du prochain texte
+      }
+    }
+
+    typeNextChar(); // Commence l'animation
+
 
 
 
@@ -43,3 +76,27 @@ startSlider();
 
 //loader
 
+
+
+// Sélectionnez tous les éléments avec la classe 'bloc'
+var blocSections = document.querySelectorAll('.bloc');
+
+// Ajoutez des variables pour stocker l'index de la section active et la direction du défilement
+var activeSectionIndex = 0;
+var scrollDirection = 0;
+
+// Parcourez chaque section et ajoutez un gestionnaire d'événement pour l'événement wheel (molette de souris)
+blocSections.forEach(function(section, index) {
+  section.addEventListener('wheel', function(event) {
+    event.preventDefault(); // Empêche le comportement par défaut du défilement de la molette de souris
+
+    // Vérifiez la direction du défilement de la molette de souris
+    scrollDirection = event.deltaY > 0 ? 1 : -1;
+
+    // Mettez à jour l'index de la section active en fonction de la direction du défilement
+    activeSectionIndex = Math.max(0, Math.min(activeSectionIndex + scrollDirection, blocSections.length - 1));
+
+    // Faites défiler la fenêtre jusqu'à la section active avec une animation fluide
+    blocSections[activeSectionIndex].scrollIntoView({ behavior: 'smooth' });
+  });
+});

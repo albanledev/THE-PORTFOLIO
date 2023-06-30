@@ -21,7 +21,7 @@ window.addEventListener('load', function() {
 //animation Welcome 
 
 var textElement = document.getElementById('typed-text');
-var strings = ["Bienvenue", "Bienvenidos", "Welcome", "Yôkoso", "Benvenuto", "Willkommen"];
+var strings = ["Bienvenue", "Welcome"];
 var index = 0;
 var charIndex = 0;
 var delay = 100; // Délai entre chaque frappe (en ms)
@@ -184,5 +184,17 @@ for (var i = 0; i < buttons.length; i++) {
     // Effectuez une action lorsque le bouton est cliqué
     console.log("Button clicked!");
     // Vous pouvez également ajouter d'autres actions que vous souhaitez exécuter ici
+  });
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  disableTextSelection();
+});
+
+function disableTextSelection() {
+  document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
   });
 }

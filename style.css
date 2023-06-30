@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Birthstone&family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Birthstone&family=GFS+Didot&family=Gugi&family=Koulen&family=Poppins&display=swap");
 .bloc {
   scroll-snap-align: start; /* Indique où l'élément doit s'aligner après le défilement */
   scroll-snap-stop: always; /* Force l'arrêt du défilement à chaque point d'arrêt */
@@ -21,7 +21,6 @@ html {
 body {
   background-color: #000;
   color: #fff;
-  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
@@ -44,7 +43,7 @@ a {
 }
 
 h1 {
-  font-family: "Birthstone", cursive;
+  font-family: "Koulen", cursive;
   font-size: 7em;
   margin: 0%;
   padding: 0%;
@@ -72,7 +71,7 @@ h1 {
   width: 50%;
 }
 .hero-section .hero-text p {
-  color: #7D7D7D;
+  color: white;
   font-size: 1em;
   line-height: 1.6em;
   width: 100%;
@@ -88,12 +87,13 @@ h1 {
   position: relative;
   border: none;
   font-size: 14px;
-  color: #fff;
-  width: 9em;
-  height: 3em;
+  color: black;
+  font-weight: 600;
+  width: 8em;
+  height: 2.5em;
   line-height: 2em;
   text-align: center;
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background: linear-gradient(90deg, #077CC1, #FFCD19, #FFCD19, #077CC1);
   background-size: 300%;
   border-radius: 30px;
   z-index: 1;
@@ -119,16 +119,16 @@ h1 {
   right: -5px;
   bottom: -5px;
   z-index: -1;
-  background: linear-gradient(90deg, #E42D4D, #ffeb3b, #f441a5, #03a9f4);
+  background: linear-gradient(90deg, #FFCD19, #FFCD19, #077CC1, #077CC1);
   background-size: 400%;
-  border-radius: 35px;
+  border-radius: 20px;
   transition: 1s;
 }
 .hero-section button:hover::before {
   filter: blur(20px);
 }
 .hero-section button:active {
-  background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background: linear-gradient(32deg, #077CC1, #FFCD19, #FFCD19, #077CC1);
 }
 
 @media screen and (max-width: 767px) {
@@ -141,7 +141,7 @@ h1 {
     transform: scale(0.6, 0.6);
   }
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1050px) {
   .hero-section {
     flex-wrap: wrap;
   }
@@ -155,7 +155,7 @@ h1 {
     text-align: center;
   }
   .hero-section .hero-text p {
-    color: #7D7D7D;
+    color: white;
     font-size: 1em;
     line-height: 1.5em;
     width: 70%;
@@ -163,8 +163,11 @@ h1 {
   .hero-img {
     transform: scale(0.8, 0.8);
   }
+  h1 {
+    font-size: 3.5em !important;
+  }
 }
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 1050px) {
   .hero-img {
     position: relative;
     right: 80px;
@@ -314,6 +317,7 @@ body.loading {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: -10;
 }
 
 .about-flex {
@@ -328,7 +332,7 @@ h1 {
   font-size: 5em;
   margin-bottom: 0;
   margin-top: 0;
-  width: 75% !important;
+  z-index: 20;
 }
 
 .about-text {
@@ -336,7 +340,7 @@ h1 {
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-around;
-  height: 80%;
+  height: 85%;
   margin-right: 10vw;
   width: 100%;
 }
@@ -347,8 +351,12 @@ h1 {
   width: 75% !important;
   text-align: end;
 }
+.about-text .bio {
+  width: 50%;
+  z-index: 10;
+}
 .about-text div > div > p {
-  color: #7D7D7D;
+  color: #FFCD19;
   font-size: 1em;
   line-height: 1.6em;
   width: -moz-fit-content;
@@ -359,9 +367,9 @@ h1 {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
-  left: -200px;
-  z-index: -10;
+  top: 0px;
+  left: -130px;
+  z-index: 10;
 }
 
 .slider-container {
@@ -409,10 +417,10 @@ h1 {
   bottom: 0px !important;
   left: 10%;
   width: 1vw;
-  z-index: 999;
+  z-index: -5;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
   .lottie-quotes {
     width: 100%;
     height: 100%;
@@ -461,15 +469,21 @@ h1 {
     width: 100%;
   }
   .about-text h1 {
-    font-size: 4em;
+    font-size: 3em;
     margin-bottom: 0;
     margin-top: 0;
-    width: 75% !important;
     text-align: center;
     line-height: 1em;
   }
+  .about-text .bio {
+    width: 80%;
+    line-height: 1.6em;
+    margin: auto;
+    align-self: flex-start;
+    z-index: 10;
+  }
   .about-text div > div > p {
-    color: #7D7D7D;
+    color: #FFCD19;
     font-size: 1em;
     line-height: 1.6em;
     width: 100% !important;
@@ -574,17 +588,109 @@ h1 {
 }
 .expand {
   animation: cursorAnim3 0.5s forwards;
-  border: 1px solid red;
+  border: 1px solid #ffeb3b;
 }
 
+@media screen and (max-width: 1050px) {
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 85%;
+    margin-right: 10vw;
+    width: 100%;
+    margin-top: 100px;
+    margin-right: 0px;
+  }
+  .about h1 {
+    text-align: center;
+  }
+  .about .about-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+  }
+  .about .bio {
+    margin-top: 80px;
+    width: 70%;
+  }
+  .slider-container {
+    align-self: flex-end;
+    position: relative;
+    height: 150px;
+    width: 30vw;
+    right: 10vw;
+    padding-bottom: 400px;
+  }
+  .lottie-quotes {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100px;
+    left: -130px;
+    z-index: 10;
+  }
+}
 @media screen and (max-width: 600px) {
   body .cursor {
     display: none;
   }
   body .about {
     width: 100%;
-    height: 150vh;
+    height: 150vh !important;
     position: relative;
     margin-top: 50px;
+  }
+  .about-text {
+    display: flex;
+    height: 85%;
+    margin-right: 0vw;
+    width: 100%;
+    margin-top: 100px;
+    margin-right: 0px;
+  }
+  .slider-container {
+    align-self: center;
+    position: relative;
+    width: 100%;
+    margin-left: 50%;
+    padding-bottom: 400px;
+  }
+  .slider-item {
+    align-self: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    opacity: 0;
+    transition: opacity 0.5s, transform 1s;
+  }
+  .lottie-quotes {
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    left: 20vw;
+    z-index: 10;
+  }
+}
+@media screen and (max-width: 600px) and (min-height: 600px) {
+  div.about {
+    height: 140vh !important;
+  }
+  .lottie-quotes {
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    top: 130px;
+    left: 20vw;
+    z-index: 10;
   }
 }/*# sourceMappingURL=style.css.map */

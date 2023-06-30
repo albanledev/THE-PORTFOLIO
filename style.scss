@@ -455,6 +455,7 @@ body.loading {
     margin-top: 0;
     // width: 75% !important;
     z-index: 20;
+    
   }
 
 
@@ -837,6 +838,10 @@ body.loading {
   }
 
   @media screen and (max-width: 600px) {
+
+    .alban{
+      font-size: 2.1rem !important;
+    }
     body {
       .cursor {
         display: none;

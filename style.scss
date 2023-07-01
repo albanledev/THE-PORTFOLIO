@@ -840,7 +840,9 @@ body.loading {
   @media screen and (max-width: 600px) {
 
     .alban{
-      font-size: 2.1rem !important;
+      width: 100%;
+      font-size: 2.7rem !important;
+      text-align: left !important;
     }
     body {
       .cursor {
@@ -873,6 +875,7 @@ body.loading {
     .slider-container {
       align-self: center;
       position: relative;
+      
       // height: 150px;
       width: 100%;
       margin-left: 50%;
@@ -906,12 +909,22 @@ body.loading {
       
       // display: none;
     }
+
+    .lottie-row{
+      display: none;
+    }
   
     
   
     
   
     
+  }
+
+  @media screen and (min-width: 600px) {
+.cut{
+  display: none;
+}
   }
 
   @media screen and (max-width: 600px) and (min-height: 600px) {
@@ -928,6 +941,18 @@ body.loading {
       z-index: 10;
       
       // display: none;
+    }
+
+    .slider-container {
+      align-self: center;
+      position: relative;
+      
+      // height: 150px;
+      width: 100%;
+      margin-left: 50%;
+      // right: 10vw;
+      padding-bottom: 70vh;
+      // overflow: hidden;
     }
   }
 

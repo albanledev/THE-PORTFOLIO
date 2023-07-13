@@ -204,26 +204,46 @@ function disableTextSelection() {
 
 
 
-var swiper = new Swiper(".swiper", {
-  effect: "coverflow",
-  grabCursor: false,
-  centeredSlides: true,
-  slidesPerView: 2,
-  speed: 600,
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 100,
-    modifier: 3,
-    slideShadows: true,
-  },
-  loop: true,
-  autoplay: {
-    delay: 2000, // Définit le délai entre chaque slide en millisecondes
-    disableOnInteraction: true, // Permet de continuer l'autoplay même si l'utilisateur interagit avec le swiper
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: false,
-  },
+var swiper;
+
+function initSwiper() {
+  swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: false,
+    centeredSlides: true,
+    slidesPerView: getSlidesPerView(),
+    speed: 600,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 3,
+      slideShadows: true,
+    },
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: false,
+    },
+  });
+}
+
+function getSlidesPerView() {
+  return window.innerWidth < 1050 ? 1 : 2;
+}
+
+function updateSwiper() {
+  swiper.params.slidesPerView = getSlidesPerView();
+  swiper.update();
+}
+
+window.addEventListener("load", function () {
+  initSwiper();
+  updateSwiper();
 });
+
+window.addEventListener("resize", updateSwiper);

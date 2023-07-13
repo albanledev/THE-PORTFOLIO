@@ -874,4 +874,8 @@ section a {
   .production .bye {
     display: none;
   }
+  section {
+    max-width: 100vw !important;
+    padding: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

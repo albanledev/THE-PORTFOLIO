@@ -968,6 +968,10 @@ body.loading {
   height: 100vh;
   background-color: #ffcd19;
 
+
+
+// #077CC1
+// #ffcd19
   .production-flex{
     display: flex;
     flex-direction: row;
@@ -1040,6 +1044,7 @@ section a {
 
 .swiper-slide {
   height: 70vh !important;
+  
   // width: 100% !important;
   display: flex;
   flex-direction: column;
@@ -1154,5 +1159,11 @@ section a {
   }
 
 
+}
+
+section{
+  // transform: scale(2,1);
+max-width: 100vw !important;
+padding: 0;
 }
 }

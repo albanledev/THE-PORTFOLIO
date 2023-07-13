@@ -875,7 +875,7 @@ section a {
     display: none;
   }
   section {
-    max-width: 100vw !important;
+    max-width: 75vw !important;
     padding: 0;
   }
 }/*# sourceMappingURL=style.css.map */

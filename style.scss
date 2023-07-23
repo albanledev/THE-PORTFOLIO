@@ -1223,7 +1223,7 @@ margin-top: 5vh;
   margin: 1rem;
   display: block;
   position: relative;
-
+  text-align: center;
   width: 100%;
   min-width: 200px;
   max-width: 500px;
@@ -1364,13 +1364,18 @@ margin-top: 5vh;
 }
 
 .thumbnail__caption {
-  color: #ABABAB;
+  color: white;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 300;
   padding: 3rem;
   padding-left: 4rem;
   // margin: auto;
+
+  span{
+    // display: inline-block;
+    margin-top: 10px;
+  }
 }
 
 /* Hover transition */
@@ -1452,7 +1457,7 @@ margin-top: 5vh;
 @media screen and (max-width:480px){
   .first:before, .second:before{
    
-      font-size: 0.8em;
+      font-size: 1em;
       /* Add any other styles you want for the "Back-end" label */
     
   }

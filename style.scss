@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Birthstone&family=GFS+Didot&family=Gugi&family=Koulen&family=Poppins&display=swap');
 
+body.resize {
+  transform-origin: top left;
+  transform: scale(1); /* Ajustez la valeur de la mise à l'échelle selon vos besoins */
+}
+
+
 .bloc {
   scroll-snap-align: start; /* Indique où l'élément doit s'aligner après le défilement */
   scroll-snap-stop: always; /* Force l'arrêt du défilement à chaque point d'arrêt */
   scroll-snap-type: y mandatory; /* Active le défilement par défilement régulé sur l'axe Y */
+  width: 100%;
+  height: 100vh;
 }
 
 *{
@@ -854,6 +862,7 @@ body.loading {
         height: 150vh !important;
         position: relative;
         margin-top: 50px;
+        
       }
     }
 
@@ -960,13 +969,24 @@ body.loading {
 
   // 3ème partie : les réalisations
 
+.laser{
+  width: 100%;
+  
+  background: rgb(0,0,0);
+  background-image: linear-gradient(165deg, #000000, #000000,#000000,#000000, #077CC1,  #ffcd19,#000000,#000000,#000000 ) !important;
 
+}
 
 
 .production{
   width: 100%;
   height: 100vh;
-  background-color: #ffcd19;
+  // background-color: #ffcd19;
+  // background: rgb(0,0,0);
+  // background-image: linear-gradient(to  right bottom, #000000, #000000,#000000,#000000, #077CC1, #ffcd19, #ffcd19);
+
+// background-image: linear-gradient(180deg, #ffcd19 0%, #ddb319 100%);
+
 
 
 
@@ -986,7 +1006,7 @@ body.loading {
     width: fit-content;
     line-height: 80px;
     margin-left: 100px;
-    color: black;
+    color: white;
     // flex: 1;
 
     margin-top: 0px;
@@ -1165,5 +1185,284 @@ section{
   // transform: scale(2,1);
 max-width: 75vw !important;
 padding: 0;
+margin-top: 5vh;
 }
+}
+
+@media screen and (max-width: 600px) {
+  .production{
+    // border-top: #077CC1 7px solid;
+  }
+}
+  
+
+@media  screen and (max-width: 527px) {
+  .production h1{
+    font-size: 2.5rem !important;
+  }
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+
+.skills > h1{
+  width: fit-content;
+  margin: auto;
+}
+
+.flexSkills{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+
+.thumbnail {
+  margin: 1rem;
+  display: block;
+  position: relative;
+
+  width: 100%;
+  min-width: 200px;
+  max-width: 500px;
+
+  // border-radius: 6%;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .8);
+  overflow: hidden;
+  cursor: none;
+  transition: box-shadow .35s ease;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+
+  /* Hover transition */
+  &:hover {
+    box-shadow: 0 20px 15px -8px rgba(0, 0, 0, .8);
+  }
+}
+
+.thumbnail__container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnail__img {
+  flex: 4 0 auto;
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.2);
+  transition: transform .35s ease;
+  // cursor: none !important;
+
+  /* Hover transition */
+  .thumbnail:hover & {
+    transform: scale(1);
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+  }
+
+  &:before {
+    content: "Front-end";
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    color: #F8F8F8;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    line-height: 2;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, #F8F8F8 0%, #F8F8F8 100%);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 45% 3%;
+    transform: translate(-50%, -50%);
+    transition: opacity .35s linear, transform .35s ease;
+
+    /* Hover transition */
+    .thumbnail:hover & {
+      opacity: 0;
+      transform: translate(-50%, -500%) scale(.5);
+    }
+    
+
+    
+  }
+
+  // &:last-child::before{
+  //   content: "Back-end" !important;
+  //   top: 50%;
+  //   left: 50%;
+  //   z-index: 10;
+  //   color: #F8F8F8;
+  //   font-family: "Poppins", sans-serif;
+  //   font-size: 24px;
+  //   font-weight: 300;
+  //   letter-spacing: 5px;
+  //   line-height: 2;
+  //   text-transform: uppercase;
+  //   background-image: linear-gradient(to right, #F8F8F8 0%, #F8F8F8 100%);
+  //   background-position: center bottom;
+  //   background-repeat: no-repeat;
+  //   background-size: 45% 3%;
+  //   transform: translate(-50%, -50%);
+  //   transition: opacity .35s linear, transform .35s ease;
+  // }
+
+  // --------------2eme--------------------
+
+  
+
+
+  &:after {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .0;
+    transition: opacity .35s linear;
+
+    /* Hover transition */
+    //modifie la couleur de l'overlay au hover donc un truc plus foncé pour plus de lisiblité
+    .thumbnail:hover & {
+      opacity: 0.6;
+    }
+  }
+}
+
+.thumbnail__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background-color: #F8F8F8;
+  opacity: 0;
+  transition: all .35s linear 0s;
+  transform: translateY(50px);
+}
+
+.thumbnail__caption {
+  color: #ABABAB;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 3rem;
+  padding-left: 4rem;
+  // margin: auto;
+}
+
+/* Hover transition */
+.thumbnail:hover .thumbnail__content {
+  opacity: 1;
+  transform: translateY(0); 
+}
+
+
+
+
+
+
+
+
+
+
+// .thumbnail.second-front-end .thumbnail__img:before {
+//   content: "Back-end";
+//   /* Add any other styles you want for the "Back-end" label */
+// }
+
+.second::before{
+  content: "Back-end" !important;
+  /* Add any other styles you want for the "Back-end" label */
+}
+
+.grid-container {
+  // padding: 1rem;
+  // margin: auto;
+  display: grid;
+  justify-content: center;
+  align-items: flex-end;
+  grid-template-columns: repeat(3, 1fr); /* Responsive columns */
+  gap: 3em; /* Responsive gutter */
+}
+
+.grid-item {
+  // min-width: 100px;
+  // max-width: 30vw;
+  // height: 100px;
+  // background-color: black;
+
+  img{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width:1200px){
+    .thumbnail{
+      max-width: 400px;
+    }
+}
+
+@media screen and (max-width:1050px){
+  .thumbnail{
+    // max-width: 300px;
+  }
+}
+
+@media screen and (max-width:800px){
+  .thumbnail{
+    width: 100%;
+  }
+
+  .grid-item {
+    // min-width: 100px;
+    // max-width: 30vw;
+    // height: 100px;
+    // background-color: black;
+  
+    img{
+      width: 40px;
+    }
+  }
+  
+}
+
+@media screen and (max-width:480px){
+  .first:before, .second:before{
+   
+      font-size: 0.8em;
+      /* Add any other styles you want for the "Back-end" label */
+    
+  }
+
+
+  
+}
+  
+
+
+.figma{
+  transform: scale(1.3);
 }

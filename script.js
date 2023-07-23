@@ -1,4 +1,6 @@
-
+window.addEventListener('load', () => {
+  document.body.classList.add('resize');
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   // Ajoute la classe 'loading' au body pour activer le loader et l'overlay
@@ -80,6 +82,9 @@ startSlider();
 
 
 // Sélectionnez tous les éléments avec la classe 'bloc'
+
+
+// A décocher !!!!
 var blocSections = document.querySelectorAll('.bloc');
 
 // Ajoutez des variables pour stocker l'index de la section active et la direction du défilement

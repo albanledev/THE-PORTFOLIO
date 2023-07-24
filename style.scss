@@ -1387,7 +1387,21 @@ margin-top: 5vh;
 
 
 
+.figma{
+  transform: scale(1.3);
+}
 
+.java{
+  transform: scale(1.6) translateX(14px) translateY(-8px);
+}
+
+.python{
+  transform: scale(0.8);
+}
+
+.php{
+  transform: scale(1.4);  
+}
 
 
 
@@ -1424,6 +1438,20 @@ margin-top: 5vh;
   }
 }
 
+.secondItem{
+  // transform: scale(1.3);
+  .grid-item {
+    // min-width: 100px;
+    // max-width: 30vw;
+    // height: 100px;
+    // background-color: black;
+  
+    img{
+      width: 90%;
+    }
+  }
+}
+
 @media screen and (max-width:1200px){
     .thumbnail{
       max-width: 400px;
@@ -1454,6 +1482,8 @@ margin-top: 5vh;
   
 }
 
+
+
 @media screen and (max-width:480px){
   .first:before, .second:before{
    
@@ -1462,12 +1492,70 @@ margin-top: 5vh;
     
   }
 
+.grid-container {
+    // min-width: 100px;
+    // max-width: 30vw;
+    // height: 100px;
+    // background-color: black;
+    // gap: 1.7em;
+  
+    // img{
+    //   width: 40px;
+    // }
+  }
+
+  .secondItem{
+
+    
+      gap: 3.5em;
+      margin-right: 10px;
+    
+    // transform: scale(1.3);
+    .grid-item {
+      // min-width: 100px;
+      // max-width: 30vw;
+      // height: 100px;
+      // background-color: black;
+      // width: 130%;
+    
+        img{
+          width: 100%;
+        }
+    }
+
+    span{
+      display: inline;
+      overflow: visible;
+      width: fit fit-content;
+      // white-space: nowrap;
+    }
+  }
+
+
+  .figma{
+    transform: scale(1.3);
+  }
+  
+  .java{
+    transform: scale(2) translateX(10px) translateY(-8px) !important;
+  }
+
+  .php{
+    transform: scale(1.5) translateY(-7px) !important;
+  }
+}
+
 
   
-}
-  
+@media screen and (min-width:1000px){
+  .secondItem>div{
+      img{
+        transform: scale(0.9);
+      }
+  }
 
-
-.figma{
-  transform: scale(1.3);
+  .java{
+    transform: scale(1.6) translateX(13px) translateY(-8px) !important;
+  }
 }
+

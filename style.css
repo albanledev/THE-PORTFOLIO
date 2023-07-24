@@ -1030,6 +1030,22 @@ section a {
   transform: translateY(0);
 }
 
+.figma {
+  transform: scale(1.3);
+}
+
+.java {
+  transform: scale(1.6) translateX(14px) translateY(-8px);
+}
+
+.python {
+  transform: scale(0.8);
+}
+
+.php {
+  transform: scale(1.4);
+}
+
 .second::before {
   content: "Back-end" !important;
   /* Add any other styles you want for the "Back-end" label */
@@ -1045,6 +1061,10 @@ section a {
 
 .grid-item img {
   width: 70%;
+}
+
+.secondItem .grid-item img {
+  width: 90%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1065,7 +1085,34 @@ section a {
     font-size: 1em;
     /* Add any other styles you want for the "Back-end" label */
   }
+  .secondItem {
+    gap: 3.5em;
+    margin-right: 10px;
+  }
+  .secondItem .grid-item img {
+    width: 100%;
+  }
+  .secondItem span {
+    display: inline;
+    overflow: visible;
+    width: fit -moz-fit-content;
+    width: fit fit-content;
+  }
+  .figma {
+    transform: scale(1.3);
+  }
+  .java {
+    transform: scale(2) translateX(10px) translateY(-8px) !important;
+  }
+  .php {
+    transform: scale(1.5) translateY(-7px) !important;
+  }
 }
-.figma {
-  transform: scale(1.3);
+@media screen and (min-width: 1000px) {
+  .secondItem > div img {
+    transform: scale(0.9);
+  }
+  .java {
+    transform: scale(1.6) translateX(13px) translateY(-8px) !important;
+  }
 }/*# sourceMappingURL=style.css.map */

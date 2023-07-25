@@ -1183,7 +1183,7 @@ section a {
 
 section{
   // transform: scale(2,1);
-max-width: 75vw !important;
+max-width: 90% !important;
 padding: 0;
 margin-top: 5vh;
 }
@@ -1392,7 +1392,7 @@ margin-top: 5vh;
 }
 
 .java{
-  transform: scale(1.6) translateX(14px) translateY(-8px);
+  transform: scale(1) translateX(14px) translateY(-8px);
 }
 
 .python{
@@ -1400,7 +1400,15 @@ margin-top: 5vh;
 }
 
 .php{
-  transform: scale(1.4);  
+  transform: scale(1.2) translateY(-5px);  
+}
+
+.symfony{
+  transform: scale(0.8)  !important;
+}
+
+.python{
+  transform: scale(0.8);
 }
 
 
@@ -1543,6 +1551,8 @@ margin-top: 5vh;
   .php{
     transform: scale(1.5) translateY(-7px) !important;
   }
+
+
 }
 
 
@@ -1555,7 +1565,11 @@ margin-top: 5vh;
   }
 
   .java{
-    transform: scale(1.6) translateX(13px) translateY(-8px) !important;
+    transform: scale(1.2) translateX(22px) translateY(-8px) !important;
+  }
+
+  .python{
+    transform: scale(0.7) !important;
   }
 }
 

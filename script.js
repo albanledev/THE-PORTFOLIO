@@ -252,3 +252,45 @@ window.addEventListener("load", function () {
 });
 
 window.addEventListener("resize", updateSwiper);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Ajoutez une classe spéciale pour déclencher l'animation
+      const h1 = entry.target.querySelector('.animate-on-scroll h1');
+      h1.classList.add('animate');
+      // Arrêtez d'observer le h1 après avoir déclenché l'animation
+      observer.unobserve(entry.target);
+    }
+  });
+}
+
+// Options pour l'Intersection Observer
+const options = {
+  root: null, // Utilise le viewport comme root
+  rootMargin: '0px', // Pas de margin autour du root
+  threshold: 0.5 // Le h1 est considéré comme visible quand 50% ou plus est dans le viewport
+};
+
+// Créer l'Intersection Observer
+const observer = new IntersectionObserver(handleIntersection, options);
+
+// Ciblez la div parente du h1 que vous souhaitez observer
+const h1Container = document.querySelector('.animate-on-scroll');
+
+// Commencez à observer la div parente du h1
+observer.observe(h1Container);

@@ -728,6 +728,13 @@ h1 {
   background-image: linear-gradient(165deg, #000000, #000000, #000000, #000000, #077CC1, #ffcd19, #000000, #000000, #000000) !important;
 }
 
+@media screen and (max-width: 610px) {
+  .laser {
+    background: rgb(0, 0, 0);
+    background-image: linear-gradient(145deg, #000000, #000000, #000000, #000000, #077CC1, #ffcd19, #000000, #000000, #000000) !important;
+    overflow: visible;
+  }
+}
 .production {
   width: 100%;
   height: 100vh;
@@ -754,7 +761,6 @@ section {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 5vw;
   padding: 0 50px;
   max-width: 50vw;
   margin: 0 auto;
@@ -898,6 +904,11 @@ section a {
     font-size: 2.5rem !important;
   }
 }
+.skills {
+  width: 100%;
+  height: 100vh;
+}
+
 .skills > h1 {
   width: -moz-fit-content;
   width: fit-content;
@@ -1064,7 +1075,7 @@ section a {
   justify-content: center;
   align-items: flex-end;
   grid-template-columns: repeat(3, 1fr); /* Responsive columns */
-  gap: 3em; /* Responsive gutter */
+  gap: 2.5em; /* Responsive gutter */
 }
 
 .grid-item img {
@@ -1095,7 +1106,6 @@ section a {
   }
   .secondItem {
     gap: 3.5em;
-    margin-right: 10px;
   }
   .secondItem .grid-item img {
     width: 100%;
@@ -1125,5 +1135,78 @@ section a {
   }
   .python {
     transform: scale(0.7) !important;
+  }
+}
+@media screen and (max-width: 400px) and (min-height: 800px) {
+  .hero {
+    height: 70vh;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .skills > h1, .future > h1, .future > h1 {
+    font-size: 2.5em !important;
+  }
+}
+@media screen and (max-width: 864px) {
+  .skills {
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
+}
+.future {
+  width: 100%;
+  height: 100vh;
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+}
+.future h1 {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  line-height: 1em;
+  margin-top: 50px;
+}
+.future .visibleP {
+  margin-top: 50px !important;
+  width: 70%;
+  margin: auto;
+  line-height: 1.5em;
+}
+.future .visibleP::first-letter {
+  font-size: 3em; /* Taille de la première lettre agrandie */
+  font-weight: bold; /* Poids en gras pour la première lettre */
+  float: left; /* La première lettre se comporte comme un élément flottant */
+  margin-right: 10px; /* Espacement entre la première lettre et le texte */
+  line-height: 1em; /* Hauteur de ligne normale pour la première lettre */
+}
+.future .yellowText {
+  color: #FFCD19;
+  width: 70%;
+  margin: auto;
+}
+.future .yellowText::first-letter {
+  font-size: 3em; /* Taille de la première lettre agrandie */
+  font-weight: bold; /* Poids en gras pour la première lettre */
+  float: left; /* La première lettre se comporte comme un élément flottant */
+  margin-right: 10px; /* Espacement entre la première lettre et le texte */
+  line-height: 1em; /* Hauteur de ligne normale pour la première lettre */
+}
+.future .bandeau {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.future .bandeau img {
+  width: 100%;
+  margin: auto;
+  z-index: 1 !important;
+}
+
+@media screen and (max-width: 1050px) {
+  .future > h1 {
+    font-size: 2.5em !important;
+    margin-top: 100px;
   }
 }/*# sourceMappingURL=style.css.map */

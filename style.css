@@ -1205,8 +1205,8 @@ section a {
 }
 
 @media screen and (max-width: 1050px) {
-  .future > h1 {
+  .future > div > h1 {
     font-size: 2.5em !important;
-    margin-top: 100px;
+    margin-top: 0px;
   }
 }/*# sourceMappingURL=style.css.map */

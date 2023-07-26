@@ -85,7 +85,7 @@ startSlider();
 
 
 // A décocher !!!!
-// var blocSections = document.querySelectorAll('.bloc');
+var blocSections = document.querySelectorAll('.bloc');
 
 // Ajoutez des variables pour stocker l'index de la section active et la direction du défilement
 var activeSectionIndex = 0;

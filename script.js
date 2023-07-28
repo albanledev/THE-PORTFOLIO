@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
     document.body.classList.remove('loading');
     document.querySelector('.loader').classList.add('hidden');
     // Vous pouvez également ajouter une transition ou une animation ici pour masquer/disparaître le loader et l'overlay en douceur
-  }, 2000);
+  });
 
   
 });
@@ -27,7 +27,7 @@ var strings = ["Bienvenue", "Welcome"];
 var index = 0;
 var charIndex = 0;
 var delay = 100; // Délai entre chaque frappe (en ms)
-var initialDelay = 3000; // Délai initial avant de commencer l'animation (en ms)
+var initialDelay = 1000; // Délai initial avant de commencer l'animation (en ms)
 
 function typeNextChar() {
   var currentString = strings[index];

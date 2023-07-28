@@ -59,7 +59,7 @@ a {
 }
 
 h1 {
-  font-family: "Koulen", cursive;
+  font-family: "Koulen", sans-serif;
   font-size: 7em;
   margin: 0%;
   padding: 0%;
@@ -1709,5 +1709,23 @@ textarea::placeholder {
   .form_main {
     width: 100%;
     margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .about-text div > div > p {
+    position: relative;
+    bottom: 50px;
+    width: 70%;
+  }
+  .bio {
+    position: relative;
+    bottom: 50px;
+    right: 8.5vw;
+    width: 41% !important;
+  }
+  div.lottie-quotes {
+    position: absolute;
+    top: -100px !important;
+    left: 0px;
   }
 }/*# sourceMappingURL=style.css.map */

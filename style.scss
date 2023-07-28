@@ -97,6 +97,15 @@ h1{
     align-items: center;
 }
 
+@media screen and (max-width:1050px) {
+  .hero{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+}
+
   .hero-section{
 
     display: flex;
@@ -232,7 +241,7 @@ h1{
 
         flex-wrap: wrap;
         width: 100%;
-        // justify-content: center; 
+        justify-content: center; 
 
 
         .hero-text{
@@ -868,7 +877,7 @@ body.loading {
 
   // overflow: hidden;
   p{
-    margin-left:93px !important ;
+    margin-left: 93px !important ;
     margin-right: auto !important;
     margin-top: auto !important;
   }
@@ -2167,3 +2176,15 @@ textarea::placeholder{
   
 }
   
+
+
+
+@media screen and (max-width:1050px){
+  .bloc {
+    scroll-snap-align: none; /* Indique où l'élément doit s'aligner après le défilement */
+    scroll-snap-stop: normal; /* Force l'arrêt du défilement à chaque point d'arrêt */
+    scroll-snap-type: none; /* Active le défilement par défilement régulé sur l'axe Y */
+  
+  }
+  
+}

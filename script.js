@@ -308,28 +308,26 @@ observer.observe(h1Container);
 
 
 
-    // Ajoutez ce code JavaScript à la fin du body
-    let initialTouchX = null;
+// Ajoutez un gestionnaire d'événement pour le défilement horizontal sur le trackpad
+window.addEventListener('wheel', function(event) {
+  // Vérifiez si le défilement est principalement horizontal
+  if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+    event.preventDefault(); // Empêche le comportement par défaut du défilement horizontal
 
-    document.addEventListener('touchstart', function(event) {
-      initialTouchX = event.touches[0].clientX;
+    // Obtenez la position actuelle de défilement horizontal
+    const currentScrollX = window.scrollX;
+
+    // Calculez la position de défilement horizontal centrale en fonction de la largeur de la fenêtre
+    const centerX = window.innerWidth / 2;
+
+    // Calculez le décalage horizontal à appliquer pour centrer la page
+    const scrollOffset = centerX - currentScrollX;
+
+    // Recentrez automatiquement la page en utilisant scrollTo avec le décalage horizontal calculé
+    window.scrollTo({
+      top: window.scrollY, // Conservez la position de défilement vertical actuelle
+      left: currentScrollX + scrollOffset, // Ajoutez le décalage horizontal pour centrer la page
+      behavior: 'smooth' // Ajoutez une animation fluide pour le défilement
     });
-
-    document.addEventListener('touchmove', function(event) {
-      if (initialTouchX === null) {
-        return;
-      }
-
-      const currentTouchX = event.touches[0].clientX;
-      const diffX = initialTouchX - currentTouchX;
-
-      if (Math.abs(diffX) > 10) {
-        window.scrollTo({
-          top: 0,
-          left: window.scrollX + diffX,
-          behavior: 'smooth'
-        });
-
-        initialTouchX = null;
-      }
-    });
+  }
+});

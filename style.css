@@ -76,6 +76,13 @@ h1 {
   align-items: center;
 }
 
+@media screen and (max-width: 1050px) {
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
 .hero-section {
   display: flex;
   flex-direction: row;
@@ -163,6 +170,7 @@ h1 {
   .hero-section {
     flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
   }
   .hero-section .hero-text {
     display: flex;
@@ -1535,5 +1543,12 @@ textarea::placeholder {
 @media screen and (max-width: 610px) {
   .laser {
     width: 100%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .bloc {
+    scroll-snap-align: none; /* Indique où l'élément doit s'aligner après le défilement */
+    scroll-snap-stop: normal; /* Force l'arrêt du défilement à chaque point d'arrêt */
+    scroll-snap-type: none; /* Active le défilement par défilement régulé sur l'axe Y */
   }
 }/*# sourceMappingURL=style.css.map */

@@ -3,6 +3,9 @@
 body.resize {
   transform-origin: top left;
   transform: scale(1); /* Ajustez la valeur de la mise à l'échelle selon vos besoins */
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -25,10 +28,15 @@ body.resize {
 
 html {
   scroll-behavior: smooth;
+  // overflow-x: hidden;
+  // width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 body{
-    background-color: #000;
+
+    background-color: #000 ;
     color: #fff;
     // font-family: 'Roboto', sans-serif;
     font-size: 1rem;
@@ -36,6 +44,9 @@ body{
 
     font-family: 'Poppins', sans-serif;
     cursor: none;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 
 }
 
@@ -80,7 +91,10 @@ h1{
 .hero{
     width: 100%;
     height: 100vh;
-    margin-top: 50px;
+    // margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
   .hero-section{
@@ -217,6 +231,7 @@ h1{
 
 
         flex-wrap: wrap;
+        width: 100%;
         // justify-content: center; 
 
 
@@ -518,7 +533,7 @@ body.loading {
 
 .slider-container {
   position: relative;
-  height: 150px;
+  // height: 150px;
   width: 30vw;
   right: 0vw;
   // overflow: hidden;
@@ -585,8 +600,8 @@ body.loading {
 
   .slider-container {
     position: relative;
-    height: 150px;
-    width: 60vw;
+    // height: 150px;
+    width: 100%;
     right: 0vw;
     // overflow: hidden;
   }
@@ -644,8 +659,11 @@ body.loading {
     .bio{
       width: 80%;
       line-height: 1.6em;
-      margin: auto;
+      margin-top: auto;
+      margin-left: auto;
+      margin-right: auto;
       align-self: flex-start;
+      // justify-self: flex-end;
       z-index: 10;
     }
   
@@ -653,7 +671,8 @@ body.loading {
         color: #FFCD19;
         font-size: 1em;
         line-height: 1.6em;
-        width: 100% !important;
+        width: 70% !important;
+        // align-self: center;
         
   
     }
@@ -688,11 +707,21 @@ body.loading {
 
   .slider-container {
     position: relative;
-    height: 150px;
-    width: 70vw;
+    // height: 150px;
+    width: 100%  ;
     right: 0vw;
-    margin-left: auto;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+    padding: 0px !important;
+    
+    // margin-left: auto; 
     // overflow: hidden;
+    // margin: auto;
+  }
+
+  .slider-item{
+    // display: flex;
+    // justify-content: center;
   }
 
 }
@@ -796,7 +825,7 @@ body.loading {
     display: flex;
     flex-direction: column;
     align-items: center ;
-    justify-content: space-around;
+    justify-content: flex-start;
     height: 85%;
     margin-right: 10vw;
     width: 100%;
@@ -834,7 +863,15 @@ body.loading {
   width: 30vw;
   right: 10vw;
   padding-bottom: 400px;
+  margin-left:auto !important ;
+  margin-right: auto !important;
+
   // overflow: hidden;
+  p{
+    margin-left:93px !important ;
+    margin-right: auto !important;
+    margin-top: auto !important;
+  }
 }
 
 .lottie-quotes{
@@ -884,12 +921,13 @@ body.loading {
   }
   
     .slider-container {
-      align-self: center;
+      align-self: flex-start !important;
       position: relative;
       
       // height: 150px;
-      width: 100%;
-      margin-left: 50%;
+      // width: 70% !important;
+      // margin-left: auto !important;
+      // margin-left: 50%;
       // right: 10vw;
       padding-bottom: 400px;
       // overflow: hidden;
@@ -900,14 +938,18 @@ body.loading {
       position: absolute;
       top: 0;
       left: 0;
-      width: 70%;
-      margin: auto;
+      width: 100%;
+      // margin: auto;
       // height: 100%;  
       display: flex;
       align-items: flex-start;
-      justify-content: flex-start;
+      justify-content: center;
       opacity: 0;
       transition: opacity 0.5s, transform 1s;
+
+      p{
+        width: 70%;
+      }
     }
     
     .lottie-quotes{
@@ -931,6 +973,13 @@ body.loading {
   
     
   }
+
+    @media screen and (max-width:1050px){
+      .cursor{
+        display: none ;
+      }
+      
+    }
 
   @media screen and (min-width: 600px) {
 .cut{
@@ -960,9 +1009,9 @@ body.loading {
       
       // height: 150px;
       width: 100%;
-      margin-left: 50%;
+      // margin-left: 50%;
       // right: 10vw;
-      padding-bottom: 70vh;
+      // padding-bottom: 70vh;
       // overflow: hidden;
     }
   }
@@ -972,18 +1021,21 @@ body.loading {
   // 3ème partie : les réalisations
 
 .laser{
-  width: 100%;
+  width: 100vw;
   
-  background: rgb(0,0,0);
+  background: rgb(0,0,0) center/cover no-repeat fixed;
   background-image: linear-gradient(165deg, #000000, #000000,#000000,#000000, #077CC1,  #ffcd19,#000000,#000000,#000000 ) !important;
+  // overflow-x: hidden;  
 
 }
 
 @media  screen and (max-width:610px) {
   .laser{
-    background: rgb(0,0,0);
+    background: rgb(0,0,0) center/cover no-repeat fixed;
     background-image: linear-gradient(145deg, #000000, #000000,#000000,#000000, #077CC1,  #ffcd19,#000000,#000000,#000000 ) !important;
-    overflow: visible;
+    // overflow: visible;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    
   }
   
 }
@@ -1885,7 +1937,7 @@ margin-top: 5vh;
   // transform: translate(-50%, -50%);
   // background: rgba(24, 20, 20, 0.987);
   // background-image: linear-gradient(to left bottom, #077cc1, #077cc1, #ffcd19, #ffcd19);
-  background-color: #fccd19;
+  background-color: white;
   // box-shadow: 0 15px 25px #ffcd19; 
   // margin-left: 300px;
   cursor: none;
@@ -2100,5 +2152,18 @@ textarea::placeholder{
   .contact{
     height: 65vh;
   }
+}
+  
+
+.papaLaser{
+  overflow-x: hidden !important;
+}
+
+@media screen and (max-width:610px) {
+  .laser{
+    // overflow-x: hidden !important;
+    width: 100%;
+  }
+  
 }
   

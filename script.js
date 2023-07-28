@@ -85,7 +85,7 @@ startSlider();
 
 
 // A décocher !!!!
-var blocSections = document.querySelectorAll('.bloc');
+// var blocSections = document.querySelectorAll('.bloc');
 
 // Ajoutez des variables pour stocker l'index de la section active et la direction du défilement
 var activeSectionIndex = 0;
@@ -294,3 +294,42 @@ const h1Container = document.querySelector('.animate-on-scroll');
 
 // Commencez à observer la div parente du h1
 observer.observe(h1Container);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Ajoutez ce code JavaScript à la fin du body
+    let initialTouchX = null;
+
+    document.addEventListener('touchstart', function(event) {
+      initialTouchX = event.touches[0].clientX;
+    });
+
+    document.addEventListener('touchmove', function(event) {
+      if (initialTouchX === null) {
+        return;
+      }
+
+      const currentTouchX = event.touches[0].clientX;
+      const diffX = initialTouchX - currentTouchX;
+
+      if (Math.abs(diffX) > 10) {
+        window.scrollTo({
+          top: 0,
+          left: window.scrollX + diffX,
+          behavior: 'smooth'
+        });
+
+        initialTouchX = null;
+      }
+    });

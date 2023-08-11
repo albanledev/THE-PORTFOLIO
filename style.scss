@@ -1115,14 +1115,16 @@ section a {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
-  color: #717171;
+  width: 100%;
+  height: 100%;
+  // color: #717171;
   font-weight: 500;
-  background: #fff;
-  border-radius: 3.125rem;
-  margin: 0 auto;
-  padding: 6px 26px;
+  // background: #fff;
+  // border-radius: 3.125rem;
+  // margin: 0 auto;
+  // padding: 6px 26px;
   font-size: 0.9rem;
-  transition: 0.3s ease-in-out;
+  // transition: 0.3s ease-in-out;
 }
 
 .swiper {
@@ -1166,7 +1168,7 @@ section a {
 }
 
 .swiper-slide a:hover {
-  color: #005baa;
+  // color: #005baa;
   cursor: hidden !important;
 }
 
@@ -1193,6 +1195,19 @@ section a {
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url("assets/img/spirale.jpg") no-repeat 50% 50% / cover  !important;
 }
+
+// .swiper-slide--one::before{
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 70vh;
+//   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+//     url("assets/img/spirale.jpg") no-repeat 50% 50% / cover  !important;
+//   opacity: 0.5;
+//   z-index: -1;
+// }
 
 .swiper-slide--two {
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
@@ -2149,7 +2164,10 @@ textarea::placeholder{
   transition: all 0.3s ease 0s;
 
 
-  &:hover{
+  &>a{
+    transition: all 0.3s ease 0s;
+  }
+  &>a:hover{
     color: #fccd19;
     transition: all 0.3s ease 0s;
   }
@@ -2387,4 +2405,33 @@ div.lottie-quotes{
   top: -100px !important;
   left: 0px;
 }
+}
+
+input, button, a, div, #button{
+  cursor: none;
+}
+
+
+
+//mentions légales
+
+.mentionTitle{
+  margin: auto;
+}
+
+.mentionText{
+  margin: auto;
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  
+  h2{
+    margin-top: 50px;
+    color: #fccd19;
+
+  }
+
+  p{
+    margin-top: 20px;
+  }
 }

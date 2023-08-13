@@ -1731,6 +1731,11 @@ input, button, a, div, #button {
   cursor: none;
 }
 
+.flexMention {
+  display: flex;
+  justify-content: center;
+}
+
 .mentionTitle {
   margin: auto;
 }
@@ -1747,4 +1752,10 @@ input, button, a, div, #button {
 }
 .mentionText p {
   margin-top: 20px;
+}
+
+.back {
+  position: relative;
+  top: 25px;
+  width: 10%;
 }/*# sourceMappingURL=style.css.map */

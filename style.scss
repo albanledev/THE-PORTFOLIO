@@ -2415,8 +2415,14 @@ input, button, a, div, #button{
 
 //mentions légales
 
+.flexMention{
+  display: flex;
+  justify-content: center;
+}
+
 .mentionTitle{
   margin: auto;
+  // display: flex;
 }
 
 .mentionText{
@@ -2435,3 +2441,13 @@ input, button, a, div, #button{
     margin-top: 20px;
   }
 }
+
+.back{
+  position: relative;
+
+  // left: 10%;
+  top: 25px;
+  width: 10%;
+}
+
+
